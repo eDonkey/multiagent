@@ -1,0 +1,28 @@
+{
+  "name": "renato-autos-whatsapp-agents",
+  "description": "FastAPI + CrewAI multi-agent API for Kapso WhatsApp flows, ready for Heroku.",
+  "keywords": ["python", "fastapi", "crewai", "whatsapp", "heroku"],
+  "success_url": "/health",
+  "env": {
+    "APP_ENV": {"value": "production"},
+    "APP_DEBUG": {"value": "false"},
+    "WEBHOOK_SECRET": {"description": "Shared secret used in X-API-Key for POST /message"},
+    "ANTHROPIC_API_KEY": {"description": "Anthropic API key for Claude models", "required": false},
+    "KAPSO_API_KEY": {"description": "Kapso API key for DB and WhatsApp"},
+    "KAPSO_DB_URL": {"description": "Base URL for Kapso DB REST API, without trailing slash"},
+    "KAPSO_PHONE_NUMBER_ID": {"description": "Kapso/Meta phone number id"},
+    "PHONE_RENA": {"description": "Renato phone in international format", "value": "5492216699450"},
+    "PHONE_FRAN": {"description": "Fran phone in international format", "required": false},
+    "PHONE_NEGOCIO": {"description": "Business phone in international format", "required": false},
+    "TEAM_EMAIL_RENA": {"description": "Default internal email", "required": false, "value": "renatopiermarinih@gmail.com"},
+    "TEAM_EMAIL_FRAN": {"description": "Fran internal email", "required": false},
+    "SERPER_API_KEY": {"description": "Optional, enables Research crew", "required": false},
+    "GMAIL_TOKEN_PATH": {"description": "Optional path to Gmail OAuth token", "required": false},
+    "MAX_THREADS": {"value": "4"},
+    "GLOBAL_RATE_LIMIT": {"value": "60/minute"},
+    "PHONE_RATE_LIMIT": {"value": "10/minute"},
+    "AGENT_TIMEOUT_SECONDS": {"value": "120"},
+    "CONVERSATION_WINDOW": {"value": "20"},
+    "CONVERSATION_TIMEOUT_MINUTES": {"value": "30"}
+  }
+}
