@@ -1,0 +1,22 @@
+{
+  "name": "dealer-agents-mvp",
+  "description": "Multi-tenant WhatsApp AI agents MVP for car dealerships",
+  "env": {
+    "APP_ENV": {"value": "production"},
+    "APP_DEBUG": {"value": "false"},
+    "SECRET_KEY": {"description": "App secret key"},
+    "WHATSAPP_VERIFY_TOKEN": {"description": "Meta WhatsApp verify token"},
+    "WHATSAPP_ACCESS_TOKEN": {"description": "Meta WhatsApp access token"},
+    "WHATSAPP_PHONE_NUMBER_ID": {"description": "Meta WhatsApp phone number id"},
+    "OPENAI_API_KEY": {"description": "OpenAI API key"},
+    "DEFAULT_LLM_MODEL": {"value": "gpt-4.1-mini"}
+  },
+  "formation": {
+    "web": {"quantity": 1, "size": "basic"},
+    "worker": {"quantity": 1, "size": "basic"}
+  },
+  "addons": [
+    "heroku-postgresql:essential-0",
+    "heroku-redis:mini"
+  ]
+}
